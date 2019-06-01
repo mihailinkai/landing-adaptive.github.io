@@ -1,0 +1,210 @@
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust:     100%;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    display: block;
+  width: 40%;
+   height: auto;
+	margin: 5px;
+}
+
+
+body,
+button,
+input,
+select,
+textarea {
+    color: #404040;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    margin: 0;
+    padding: 1em 0;
+}
+
+p {
+    margin: 0;
+    padding: 1em 0;
+}
+
+
+.avatar,
+.site-title {
+    text-align: center;
+}
+.avatar {
+	max-height: 210px;
+	padding: 1em 0;
+	background: linear-gradient(45deg, #312F32, #3b444b);
+box-shadow: 0 0 10px rgba(0,0,0,0.9); 
+	
+}
+
+.avatar img {
+	
+ 
+  width: 15%;
+   height: auto;
+	margin: 5px;
+}
+
+.site-title {
+    margin-top: 1px;
+    margin-bottom: 1em;
+}
+/* Splash */
+
+.splash {
+    background: #fcc0cb;
+	
+    padding-bottom: 2em;
+}
+
+.splash-content {
+    padding: 1.5em;
+}
+
+@media screen and (min-width: 600px) {
+    .splash-text {
+        columns: 2;
+        column-gap: 4em;
+    }
+
+    .splash-text p {
+        padding-top: 0;
+    }
+}
+
+/* Boxex */
+
+.boxex {
+    padding: 2em 1em 1em;
+    background: #3E454C;
+	
+}
+
+.boxex ul {
+    margin: 0;
+    padding: 0;
+}
+
+.boxex li {
+    margin-bottom: 1em;
+    background: white;
+    list-style-type: none;
+}
+.boxex h2 {
+	margin-left: auto;
+}
+
+.boxex img{
+	 display: block;
+    border-bottom: 1px solid black;
+   width: 50px;
+   height: auto;
+	margin: auto;
+	padding: 20px;
+	
+}
+.box {
+    padding: 1.5em;
+}
+
+/* More  */
+
+.more {
+    padding: 2em;
+}
+
+/* Twins  */
+
+.twin {
+    padding: 2em;
+    background: #033f34;
+    color: white;
+}
+
+.twin:last-of-type {
+    background: #fcc0cb;
+}
+
+/* Colophon section */
+.footer-page {
+    padding: 2em;
+    background: hsl(0, 0%, 10%);
+    color: white;
+    text-align: center;
+}
+
+.footer-page a {
+    color: white;
+}
+
+.footer-page a:hover,
+.footer-page a:focus {
+    border-bottom: 1px solid white;
+}
+
+
+/*......
+Use flex to create a three-bucket layout 
+.......*/
+
+@media screen and (min-width: 700px) {
+    @supports (display: flex) {
+
+        .boxex ul {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .boxex li {
+            width: 31%;
+        }
+
+    }
+}
+
+/*......
+Grid  for wider screens, when browser supports grid:
+.........*/
+
+@media screen and (min-width: 600px) {
+    /* Layout with CSS Grid */
+    @supports (display: grid) {
+
+        /* 4cl layout.  */
+        .grid {
+
+            display: grid;
+            grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+        }
+
+        /* Center items in the 2 center cls: */
+        .splash-content,
+        .more-content,
+        .boxex ul {
+            grid-column: 2/4;
+        }
+
+        /* automatic grid placement */
+        .twin,
+        .footer-page aside {
+            grid-column: span 2;
+        }
+
+    }
+}
